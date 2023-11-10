@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 @Entity (tableName = "classrooms")
 
 public class Classrooms {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private long Id;
     @ColumnInfo(name = "name")
     private String name;

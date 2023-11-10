@@ -7,9 +7,10 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "timetable", foreignKeys = {@ForeignKey(entity = Classrooms.class, parentColumns = "Id",
-        childColumns = "classroom") @ForeignKey(entity = )}, indices = {@Index(value = {"classroom"})})
+        childColumns = "classroom")}, indices = {@Index(value = {"classrooms"})},  @ForeignKey(entity = Lessons.class,
+        parentColumns = "Id", childColumns = "lesson"), indices = {@Index(value = {"lesson"})}
 public class TimeTable {
-        @PrimaryKey
+        @PrimaryKey(autoGenerate = true)
         private long Id;
         @ColumnInfo (name = "lesson")
         private int lesson;
